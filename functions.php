@@ -1,7 +1,5 @@
 <?php
 
-require_once 'templates/Header.php';
-
 function connectToDB(): ?PDO
 {
     try {
