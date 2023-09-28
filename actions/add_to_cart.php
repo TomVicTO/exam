@@ -10,7 +10,7 @@ if(isset($_GET['produit_id'])) {
     $articleId = $_GET['produit_id'];
 
     // Obtient les détails de l'article à partir de votre base de données
-    $article = fetchProduct($articleId);
+    $article = getProductById($articleId);
 
     if (!$article) {
         // L'article n'existe pas, redirigez vers la page du panier ou affichez un message d'erreur
@@ -36,18 +36,15 @@ if(isset($_GET['produit_id'])) {
             $_SESSION['cart'][$itemIndex]['quantity'] += $_GET['quantity'];
         } else {
             // Ajoutez l'article au panier avec une quantité initiale de 1
-            $_SESSION['cart'][] = [
-
+            $_SESSION['cart'][$articleId] = [
                 'title' => $article['title'],
                 'desc' => $article['description'],
                 'price' => $article['price'],
                 'platform' => $article['platform'],
                 'released_at' => $article['released_at'],
                 'image' => $article['image'],
-                'quantity' => 1
+                'quantity' => $_GET['quantite']
             ];
-            var_dump($_SESSION);
-            die();
         }
 
         // Redirigez vers la page du panier

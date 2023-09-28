@@ -5,7 +5,7 @@ if (!isset($total)) {
 }
 if (isset($_SESSION['cart'])) {
     foreach ($_SESSION['cart'] as $article) {
-        echo '<div class="article"><a href="product.php?id=' . $article['id'] . '"><img alt="img de bg" src="' . $article['image'] . '">';
+        echo '<div class="article"><a href="product.php?id=' . $article['id'] . '"><img alt="img de bg" src="' . $article['image'] . '"/a>';
         echo '<h2>' . $article['title'] . '</h2>';
         echo '<p>Prix unitaire: ' . $article['price'] . '€</p>';
         echo '<p>Quantité: ' . $article['quantity'] . '</p>';

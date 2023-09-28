@@ -69,14 +69,3 @@ function isUsernameTaken($username) {
 
     return $stmt->fetchColumn() > 0;
 }
-
-function fetchProduct(int $id): array
-{
-    $sql = "SELECT * FROM product WHERE id = :id";
-    $pdo = connectToDB();
-    $stmt = $pdo->prepare($sql);
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
-    $articles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $articles;
-}
