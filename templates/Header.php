@@ -14,6 +14,8 @@ session_start();
 </head>
 <body>
 
+<a href=index.php>Accueil</a>
+
 <a href=product.php>Produit</a>
 
 <a href=cart.php>Panier</a>
